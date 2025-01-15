@@ -1,0 +1,48 @@
+***VPC endpoint***
+-VPC endpoints allow a VPC to connect to the following:
+-AWS Services
+  -S3 or DynamoDB
+-AWS Partner Services 
+-Other VPCs
+---------------------
+-Endpoints are higly available, higly redundant and scalable virtual devices
+
+-Two types of endpoints
+
+  Gateway Endpoints;
+      - High speed security to AWS services
+      - Places a route in touring table
+      - Amazon S3 Endppoints
+        -Allows private access from your vpc to S3
+        -When you careate an endpoint for S3 a prefix list and VPC endpoint are created
+      - The prefix list will adhere to this naming convention : -pl-xxxxxxxx
+      - The routing table will show for rout/prefix
+          pl-xxxxxxxx
+      - the route to the vpc endpoint will be in the routing table
+Gateway Endpoint Security
+      - Endpoing policies can be setup to limit resources that are avaibable from the endpoint
+        - i.e S3 Bucket
+
+      - Limit routing information to subnets that need access to the endpoint
+        -if you dont have a route in the routing table you cant reach it
+
+  Interface Endpoints
+      - Interface endpoints are a way to connect to certain AWS services and external organizations 
+        - EC2 systems managere, Kinesis, ELB APIs
+        - External services hosted by AWS parteners or custimers in their own VPCs
+      - Interface endpoints are local to the VPC
+      - Interface endpoints are effectively an ENI in your VPC
+      - When you create the endpoint AWS will generate an AWS endpoint specific DNS name so you can connect to the endpoint via its DNS name
+      - Interface endppoints use AWS Private Link
+      - Virtual private line over the AWS network
+      - Private link creates an elastic network interface
+      - Restricts all traffic between the VPC and the AWS or Customer or Partner Organization
+      * Privatge Link Vs VPC Peering
+        -Private link allows access to a very specific service
+        -VPC peering allows access to all the services that you allow
+        -VPC peering allows a moderate number of connections(125)
+        -Private link is much more scalable
+        -Limites are based upon the max throughput achieved by your load balancers and servers
+        -Private link solves the address problem when connecting to external VPCs
+        -Private link uses NAT So there is no need to worry about overlapping address space
+
