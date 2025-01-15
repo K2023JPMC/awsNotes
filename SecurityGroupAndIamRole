@@ -1,0 +1,43 @@
+Secuirty Groups
+
+* Security Groups act as virtual firewalls for your AWS resources (eg. EC2 instances).
+* They control inbound and outbound traffic to the resources.
+* Security Groups are defined by allowing or denying specific IP ranges or protocols
+* They are network-level controls, not related to permissions or roles
+
+IAM Roles
+
+* IAM Roles define a set of permissions for your AWS services to perform actions on your behalf
+* Roles are identity-based permissions used for secure access control (e.g., EC2 instance can assume a role to access to S3 Bucket).
+* IAM Roles do not interact with Secuirty Groups
+
+How They Work Together
+
+You cannot assign an IAM Role to a Secuirty Groups directly, but you can assign a role to an application or instance (e.g., EC2 instance) and attache the Secuirty group to that instance.
+
+Example Setup:
+
+1. Create Secuirty Group
+
+* Allow HTTO(80) and HTTPS (443) traffic for a web application.
+* Deny all other inbound traffic.
+
+2. Create an IAM Role:
+
+* Grant the application permission to access an S3 bucket or DynamoDb Table
+
+3. Launch an EC2 Instance
+
+* Attach the IAM Role to the EC2 Instance.
+* Assign the Security Group to control traffic to/from the instance
+
+
+
+
+
+
+
+
+
+
+  
