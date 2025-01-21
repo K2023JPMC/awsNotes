@@ -10,8 +10,8 @@ Networking and Content Delivery
 
 ---What is VPC?---
 isolated segmant of AWS cloud
-    need name
-      & CIRD range
+    need name (Cider block)
+      & CIRD range 
   --what is subnet?--
       public subnet  -- accessable from outside from your VPC from internet  its own address and public IP address
            how to make subnet public?
