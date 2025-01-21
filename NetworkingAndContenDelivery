@@ -1,0 +1,23 @@
+Networking and Content Delivery
+
+1. Amazon API Gateway
+2. Amazon Cloud Front
+3. Elastic Load Balancing
+4. Aamazon Route 53
+5. Amazon VPC
+
+
+
+---What is VPC?---
+isolated segmant of AWS cloud
+    need name
+      & CIRD range
+  --what is subnet?--
+      public subnet  -- accessable from outside from your VPC from internet  its own address and public IP address
+           how to make subnet public?
+          -- internet gateway
+          -- route table ables talk to internet gateway
+      private subnet  --> inaccessible
+        
+      
+    
